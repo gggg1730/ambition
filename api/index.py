@@ -92,9 +92,10 @@ def logout():
 @app.route('/market')
 def market():
     products = [
-        {'name': 'Product 1', 'description': 'Description 1', 'price': '10', 'image_url': '/static/images/product1.jpg'},
-        {'name': 'Product 2', 'description': 'Description 2', 'price': '20', 'image_url': '/static/images/product2.jpg'},
-        {'name': 'Product 3', 'description': 'Description 3', 'price': '30', 'image_url': '/static/images/product3.jpg'}
+        {'name': '커피에 반하다 기프티콘', 'description': '커피에 반하다 에서 사용할 수 있는 10,000원 기프티콘', 'price': '10', 'image_url': '/file/product1.jpg'},
+        {'name': '문화상품권 50,000원', 'description': '문화상품권 50,000원 기프티콘', 'price': '50', 'image_url': '/file/product2.jpg'},
+        {'name': '쿠우쿠우 50,000원 기프티콘', 'description': '쿠우쿠우 에서 사용할 수 있는 50,000원 기프티콘', 'price': '50', 'image_url': '/file/product3.jpg'},
+        {'name': 'IPhone 16 PRO', 'description': 'Apple에서 새로 나온 신상 휴대폰', 'price': '2000', 'image_url': '/file/product4.jpg'}
     ]
     return render_template('market.html', products=products)
 
@@ -111,9 +112,10 @@ def buy(product_name, product_price):
             
             # 상품 이름과 가격이 일치하는지 확인
             products = [
-                {'name': 'Product%201', 'description': 'Description 1', 'price': 10},
-                {'name': 'Product%202', 'description': 'Description 2', 'price': 20},
-                {'name': 'Product%203', 'description': 'Description 3', 'price': 30}
+                        {'name': '커피에 반하다 기프티콘', 'description': '커피에 반하다 에서 사용할 수 있는 10,000원 기프티콘', 'price': 10},
+                        {'name': '문화상품권 50,000원', 'description': '문화상품권 50,000원 기프티콘', 'price': 50},
+                        {'name': '쿠우쿠우 50,000원 기프티콘', 'description': '쿠우쿠우 에서 사용할 수 있는 50,000원 기프티콘', 'price': 50},
+                        {'name': 'IPhone 16 PRO', 'description': 'Apple에서 새로 나온 신상 휴대폰', 'price': 2000}
             ]
             product = next((p for p in products if p['name'] == product_name and p['price'] == product_price), None)
             
